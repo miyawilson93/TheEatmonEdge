@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f5ee">
+  <meta name="description" content="The Eatmon Edge helps students, educators and schools turn preparation into measurable academic growth.">
+  <title>The Eatmon Edge | Where Preparation Becomes Impact</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #172a24;
+      --green: #245b45;
+      --green-dark: #173c30;
+      --lime: #d9ef77;
+      --coral: #e9795d;
+      --paper: #f4f5ee;
+      --white: #fffefa;
+      --muted: #69756d;
+      --line: #dce2d9;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: "DM Sans", sans-serif;
+      --display: "Manrope", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .wrap { width: min(1160px, calc(100% - 56px)); margin-inline: auto; }
+    .eyebrow { margin: 0 0 18px; color: var(--green); font-size: 12px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; }
+    .section-title { margin: 0; font-family: var(--display); font-size: 44px; line-height: 1.12; letter-spacing: 0; font-weight: 600; }
+    .section-intro { max-width: 550px; margin: 18px 0 0; color: var(--muted); font-size: 16px; line-height: 1.7; }
+    .button { display: inline-flex; min-height: 50px; align-items: center; justify-content: center; gap: 12px; padding: 0 21px; border: 1px solid var(--green); background: var(--green); color: white; font-size: 14px; font-weight: 700; transition: background .2s, color .2s, transform .2s; }
+    .button:hover { transform: translateY(-2px); background: var(--green-dark); }
+    .button-light { border-color: var(--line); background: transparent; color: var(--ink); }
+    .button-light:hover { border-color: var(--green); background: var(--white); color: var(--green); }
+    .arrow { font-size: 17px; line-height: 1; }
+
+    .site-header { position: sticky; z-index: 10; top: 0; border-bottom: 1px solid rgba(23,42,36,.08); background: rgba(244,245,238,.94); backdrop-filter: blur(12px); }
+    .header-inner { display: flex; height: 78px; align-items: center; justify-content: space-between; }
+    .brand { display: flex; align-items: center; gap: 11px; font-family: var(--display); font-size: 15px; font-weight: 800; line-height: 1.05; }
+    .brand-mark { display: block; width: 54px; height: 54px; flex: 0 0 54px; object-fit: contain; }
+    .brand small { display: block; margin-top: 4px; font-family: var(--sans); font-size: 9px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 34px; color: #425149; font-size: 13px; font-weight: 600; }
+    .nav-links a:not(.button):hover { color: var(--green); }
+    .nav-links .button { min-height: 42px; padding-inline: 17px; color: white; }
+    .menu-toggle { display: none; width: 42px; height: 42px; border: 1px solid var(--line); background: transparent; color: var(--ink); font-size: 22px; cursor: pointer; }
+
+    .hero { padding: 68px 0 76px; }
+    .hero-grid { display: grid; min-height: 490px; grid-template-columns: 1.03fr .97fr; align-items: center; gap: 56px; }
+    .hero-copy { padding: 22px 0; }
+    .hero .eyebrow { margin-bottom: 22px; }
+    h1 { max-width: 610px; margin: 0; font-family: var(--display); font-size: 64px; font-weight: 600; line-height: 1.04; letter-spacing: 0; }
+    h1 em { color: var(--green); font-family: var(--serif); font-weight: 400; }
+    .hero-copy > p:not(.eyebrow) { max-width: 490px; margin: 24px 0 28px; color: var(--muted); font-size: 17px; line-height: 1.7; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 11px; }
+    .hero-note { display: flex; align-items: center; gap: 12px; margin-top: 40px; color: var(--muted); font-size: 12px; }
+    .note-mark { width: 32px; height: 1px; background: var(--coral); }
+    .hero-visual { position: relative; min-height: 490px; }
+    .hero-photo { position: absolute; inset: 0 0 22px 26px; overflow: hidden; background: #bcc9af; }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+    .photo-caption { position: absolute; right: 0; bottom: 0; display: flex; width: 246px; min-height: 104px; flex-direction: column; justify-content: center; padding: 20px 23px; background: var(--lime); }
+    .photo-caption span { font-size: 10px; font-weight: 700; letter-spacing: 1.1px; text-transform: uppercase; }
+    .photo-caption strong { margin-top: 7px; font-family: var(--display); font-size: 18px; font-weight: 700; }
+    .hero-stamp { position: absolute; top: 28px; left: 0; display: grid; width: 62px; height: 62px; place-items: center; border: 1px solid var(--paper); border-radius: 50%; background: var(--coral); color: white; font-family: var(--serif); font-size: 26px; }
+
+    .proof { border-block: 1px solid var(--line); background: var(--white); }
+    .proof-row { display: grid; min-height: 108px; grid-template-columns: 1fr 1fr 1.45fr; align-items: center; }
+    .proof-item { min-height: 56px; padding: 0 26px; border-right: 1px solid var(--line); }
+    .proof-item:first-child { padding-left: 0; }
+    .proof-item:last-child { border: 0; }
+    .proof-item strong { display: block; font-family: var(--display); font-size: 24px; font-weight: 700; }
+    .proof-item span { display: block; margin-top: 5px; color: var(--muted); font-size: 12px; }
+
+    .offerings { padding: 104px 0 110px; }
+    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 32px; margin-bottom: 48px; }
+    .section-heading .section-intro { max-width: 420px; margin: 0 0 3px; }
+    .offer-grid { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .offer { display: grid; grid-template-columns: 54px 1fr; gap: 14px; padding: 34px 36px 38px 0; }
+    .offer + .offer { padding-left: 34px; border-left: 1px solid var(--line); }
+    .offer-index { color: var(--coral); font-family: var(--serif); font-size: 26px; }
+    .offer h3 { margin: 2px 0 11px; font-family: var(--display); font-size: 22px; font-weight: 700; }
+    .offer p { max-width: 410px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.7; }
+    .offer-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 19px; }
+    .offer-tags span { padding: 7px 10px; background: #e9eee5; color: #425149; font-size: 11px; font-weight: 600; }
+
+    .approach { padding: 96px 0 104px; background: var(--green-dark); color: white; }
+    .approach .eyebrow { color: var(--lime); }
+    .approach .section-intro { color: #c2cec4; }
+    .approach-top { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 54px; }
+    .approach .section-title { max-width: 560px; }
+    .edge-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid rgba(255,255,255,.23); border-bottom: 1px solid rgba(255,255,255,.23); }
+    .edge-step { min-height: 220px; padding: 24px 23px 26px 0; }
+    .edge-step + .edge-step { padding-left: 23px; border-left: 1px solid rgba(255,255,255,.23); }
+    .edge-letter { display: flex; align-items: center; gap: 11px; color: var(--lime); font-family: var(--display); font-size: 25px; font-weight: 800; }
+    .edge-letter span { color: rgba(255,255,255,.5); font-family: var(--sans); font-size: 10px; font-weight: 600; letter-spacing: 1px; }
+    .edge-step h3 { margin: 26px 0 9px; font-family: var(--display); font-size: 18px; }
+    .edge-step p { max-width: 225px; margin: 0; color: #c2cec4; font-size: 13px; line-height: 1.65; }
+    .approach-foot { display: flex; align-items: center; gap: 13px; margin-top: 25px; color: #c2cec4; font-size: 12px; }
+    .approach-foot i { display: block; width: 27px; height: 1px; background: var(--coral); }
+
+    .programs { padding: 105px 0; background: var(--white); }
+    .program-layout { display: grid; grid-template-columns: .75fr 1.25fr; gap: 78px; align-items: start; }
+    .program-layout .section-title { max-width: 380px; }
+    .program-list { border-top: 1px solid var(--line); }
+    .program-row { display: grid; grid-template-columns: 160px 1fr; gap: 24px; padding: 24px 0; border-bottom: 1px solid var(--line); }
+    .program-row h3 { margin: 0; font-family: var(--display); font-size: 16px; }
+    .program-row p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
+    .program-note { margin-top: 26px; padding: 19px 22px; border-left: 3px solid var(--coral); background: var(--paper); color: #4d5b52; font-family: var(--serif); font-size: 18px; line-height: 1.5; }
+    .proposal-download { padding: 36px 0; border-block: 1px solid var(--line); background: var(--paper); }
+    .proposal-download-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .proposal-download h2 { margin: 0; font-family: var(--display); font-size: 21px; }
+    .proposal-download p:not(.eyebrow) { margin: 7px 0 0; color: var(--muted); font-size: 13px; line-height: 1.6; }
+    .proposal-download .eyebrow { margin-bottom: 8px; }
+
+    .founder { padding: 105px 0 110px; }
+    .founder-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 82px; align-items: center; }
+    .founder-visual { position: relative; width: min(100%, 360px); aspect-ratio: 4 / 5; overflow: hidden; background: #d9dfd3; }
+    .founder-visual img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 32%; }
+    .experience-overlay { position: absolute; right: 0; bottom: 0; left: 0; display: flex; min-height: 94px; align-items: center; gap: 14px; padding: 34px 20px 16px; background: linear-gradient(0deg, rgba(23,60,48,.96), rgba(23,60,48,.7) 65%, transparent); color: white; }
+    .experience-overlay strong { color: var(--lime); font-family: var(--display); font-size: 32px; line-height: 1; }
+    .experience-overlay span { max-width: 170px; font-size: 12px; font-weight: 600; line-height: 1.4; }
+    .founder-copy .section-title { font-size: 38px; }
+    .founder-copy > p:not(.eyebrow) { color: var(--muted); font-size: 14px; line-height: 1.8; }
+    .founder-copy blockquote { margin: 27px 0 0; padding: 0 0 0 19px; border-left: 2px solid var(--coral); color: var(--green-dark); font-family: var(--serif); font-size: 22px; line-height: 1.45; }
+    .founder-signoff { margin-top: 25px; color: var(--green); font-size: 12px; font-weight: 700; letter-spacing: .3px; }
+
+    .closing { padding: 72px 0 78px; background: var(--lime); }
+    .closing-inner { display: flex; align-items: center; justify-content: space-between; gap: 34px; }
+    .closing h2 { max-width: 690px; margin: 0; font-family: var(--display); font-size: 38px; font-weight: 600; line-height: 1.18; }
+    .closing .button { flex: 0 0 auto; border-color: var(--green-dark); background: var(--green-dark); }
+    .footer { padding: 27px 0; background: var(--green-dark); color: white; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer-brand { font-family: var(--display); font-size: 14px; font-weight: 800; }
+    .footer p { margin: 0; color: #c2cec4; font-size: 11px; }
+    .footer a { color: var(--lime); font-size: 12px; font-weight: 600; }
+    .footer-contact { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; color: #c2cec4; font-size: 12px; }
+    .footer-contact a { color: white; }
+
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity .65s ease, transform .65s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+    @media (max-width: 900px) {
+      .hero-grid { gap: 32px; }
+      h1 { font-size: 54px; }
+      .hero-visual { min-height: 430px; }
+      .proof-item { padding-inline: 16px; }
+      .section-title { font-size: 38px; }
+      .program-layout { gap: 42px; }
+      .founder-grid { gap: 48px; }
+    }
+    @media (max-width: 700px) {
+      .wrap { width: min(100% - 36px, 540px); }
+      .header-inner { height: 68px; }
+      .brand-mark { width: 46px; height: 46px; flex-basis: 46px; }
+      .menu-toggle { display: block; }
+      .nav-links { position: absolute; top: 67px; right: 0; left: 0; display: none; align-items: stretch; gap: 0; padding: 10px 18px 18px; border-bottom: 1px solid var(--line); background: var(--paper); }
+      .nav-links.open { display: flex; flex-direction: column; }
+      .nav-links a:not(.button) { padding: 13px 4px; border-bottom: 1px solid var(--line); }
+      .nav-links .button { margin-top: 13px; }
+      .hero { padding: 46px 0 54px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 35px; }
+      h1 { max-width: 520px; font-size: 48px; }
+      .hero-copy > p:not(.eyebrow) { font-size: 15px; }
+      .hero-note { margin-top: 27px; }
+      .hero-visual { min-height: 360px; }
+      .hero-photo { inset: 0 0 17px 17px; }
+      .photo-caption { width: 215px; min-height: 88px; padding: 16px; }
+      .photo-caption strong { font-size: 16px; }
+      .hero-stamp { top: 19px; width: 52px; height: 52px; font-size: 22px; }
+      .proof-row { grid-template-columns: 1fr 1fr; padding-block: 19px; }
+      .proof-item { min-height: 52px; padding: 7px 12px; }
+      .proof-item:first-child { padding-left: 0; }
+      .proof-item:nth-child(2) { border-right: 0; }
+      .proof-item:last-child { grid-column: 1 / -1; padding: 13px 0 2px; border-top: 1px solid var(--line); }
+      .proof-item strong { font-size: 21px; }
+      .offerings, .programs, .founder { padding: 74px 0; }
+      .section-heading, .approach-top { display: block; margin-bottom: 34px; }
+      .section-title { font-size: 34px; }
+      .section-heading .section-intro { margin-top: 15px; }
+      .offer-grid { grid-template-columns: 1fr; }
+      .offer { padding: 25px 0 28px; }
+      .offer + .offer { padding-left: 0; border-top: 1px solid var(--line); border-left: 0; }
+      .approach { padding: 75px 0; }
+      .approach-top .section-intro { margin-top: 15px; }
+      .edge-grid { grid-template-columns: 1fr 1fr; }
+      .edge-step { min-height: 190px; padding: 19px 14px 24px 0; }
+      .edge-step + .edge-step { padding-left: 14px; }
+      .edge-step:nth-child(3) { padding-left: 0; border-top: 1px solid rgba(255,255,255,.23); border-left: 0; }
+      .edge-step:nth-child(4) { border-top: 1px solid rgba(255,255,255,.23); }
+      .edge-step h3 { margin-top: 20px; }
+      .approach-foot { align-items: flex-start; line-height: 1.55; }
+      .program-layout { grid-template-columns: 1fr; gap: 31px; }
+      .program-row { grid-template-columns: 120px 1fr; gap: 17px; padding: 20px 0; }
+      .program-note { font-size: 17px; }
+      .proposal-download-inner { align-items: flex-start; flex-direction: column; gap: 18px; }
+      .founder-grid { grid-template-columns: 1fr; gap: 42px; }
+      .founder-visual { width: min(100%, 340px); margin-inline: auto; }
+      .experience-overlay { min-height: 82px; gap: 11px; padding: 29px 16px 14px; }
+      .experience-overlay strong { font-size: 28px; }
+      .experience-overlay span { font-size: 11px; }
+      .founder-copy .section-title { font-size: 34px; }
+      .closing { padding: 55px 0; }
+      .closing-inner { align-items: flex-start; flex-direction: column; }
+      .closing h2 { font-size: 32px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; gap: 12px; }
+    }
+    @media (max-width: 390px) {
+      .wrap { width: calc(100% - 30px); }
+      h1 { font-size: 42px; }
+      .button { padding-inline: 14px; font-size: 13px; }
+      .program-row { grid-template-columns: 1fr; gap: 7px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="The Eatmon Edge home">
+        <img class="brand-mark" src="The%20Eatmon%20Edge%20Logo.png" alt="The Eatmon Edge logo">
+        <span>The Eatmon Edge<small>Educate. Equip. Empower.</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">&#9776;</button>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#work">Our work</a>
+        <a href="#approach">Our approach</a>
+        <a href="#about">About</a>
+        <a class="button" href="#programs">Explore programs <span class="arrow" aria-hidden="true">&#8594;</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Educational consulting &amp; academic success</p>
+          <h1>Empowering students. <em>Equipping educators.</em></h1>
+          <p>The Eatmon Edge helps students, educators, and schools turn potential into measurable progress through thoughtful preparation, practical strategies, and purposeful support.</p>
+          <div class="hero-actions">
+            <a class="button" href="#work">Explore our work <span class="arrow" aria-hidden="true">&#8594;</span></a>
+            <a class="button button-light" href="#approach">The E.D.G.E. model</a>
+          </div>
+          <div class="hero-note"><span class="note-mark"></span>Preparing today. Leading tomorrow.</div>
+        </div>
+        <div class="hero-visual reveal">
+          <div class="hero-photo">
+            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" alt="Students learning together in a bright classroom">
+          </div>
+          <span class="hero-stamp" aria-hidden="true">Ee</span>
+          <div class="photo-caption"><span>Preparation builds confidence</span><strong>Growth with intention.</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof" aria-label="Experience and impact">
+      <div class="wrap proof-row">
+        <div class="proof-item"><strong>20+ years</strong><span>of experience in education</span></div>
+        <div class="proof-item"><strong>6-point increase</strong><span>in a school's report-card score over two years</span></div>
+        <div class="proof-item"><strong>One connected purpose</strong><span>Stronger instruction. More confident students. Sustainable school growth.</span></div>
+      </div>
+    </section>
+
+    <section class="offerings" id="work">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <div><p class="eyebrow">A clear path forward</p><h2 class="section-title">Support for learners.<br>Partnership for schools.</h2></div>
+          <p class="section-intro">Whether the goal is a stronger ACT score or a stronger schoolwide system, the work starts with understanding what learners need next.</p>
+        </div>
+        <div class="offer-grid">
+          <article class="offer reveal">
+            <span class="offer-index">01</span>
+            <div><h3>Student success</h3><p>Personalized academic support that helps students build skills, readiness, and the confidence to take their next step.</p><div class="offer-tags"><span>ACT preparation</span><span>Math tutoring</span><span>College readiness</span></div></div>
+          </article>
+          <article class="offer reveal">
+            <span class="offer-index">02</span>
+            <div><h3>School improvement</h3><p>Collaborative support that turns school data into focused action, stronger instruction, and systems educators can sustain.</p><div class="offer-tags"><span>Data &amp; assessment</span><span>Professional learning</span><span>Leadership coaching</span></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="approach" id="approach">
+      <div class="wrap">
+        <div class="approach-top reveal">
+          <div><p class="eyebrow">A practical improvement cycle</p><h2 class="section-title">The E.D.G.E. is in what we do next.</h2></div>
+          <p class="section-intro">No one-size-fits-all fixes. A collaborative process that meets each school where it is and builds toward lasting progress.</p>
+        </div>
+        <div class="edge-grid">
+          <article class="edge-step reveal"><div class="edge-letter">E <span>01 / EVALUATE</span></div><h3>Understand the need</h3><p>Listen, review relevant data, and identify strengths and priorities.</p></article>
+          <article class="edge-step reveal"><div class="edge-letter">D <span>02 / DESIGN</span></div><h3>Choose the direction</h3><p>Set clear goals and shape a focused plan with the people doing the work.</p></article>
+          <article class="edge-step reveal"><div class="edge-letter">G <span>03 / GROW</span></div><h3>Build capacity</h3><p>Put the plan into practice with coaching, collaboration, and useful tools.</p></article>
+          <article class="edge-step reveal"><div class="edge-letter">E <span>04 / EXCEL</span></div><h3>Learn and sustain</h3><p>Monitor progress, adjust what is needed, and strengthen what works.</p></article>
+        </div>
+        <div class="approach-foot"><i></i>Listen &amp; learn <span aria-hidden="true">&#8594;</span> Design &amp; implement <span aria-hidden="true">&#8594;</span> Monitor &amp; adjust <span aria-hidden="true">&#8594;</span> Repeat</div>
+      </div>
+    </section>
+
+    <section class="programs" id="programs">
+      <div class="wrap program-layout">
+        <div class="reveal"><p class="eyebrow">Learning that travels back to the classroom</p><h2 class="section-title">Practical programs. Meaningful progress.</h2><p class="section-intro">Every program is designed around real goals and leaves participants with a clear next step.</p></div>
+        <div class="reveal">
+          <div class="program-list">
+            <div class="program-row"><h3>ACT Academy</h3><p>Flexible 4-, 8-, and 12-week options pair a diagnostic with targeted practice, tutoring, and progress updates.</p></div>
+            <div class="program-row"><h3>Math Academy</h3><p>Individualized support from Algebra I through Precalculus, plus ACT Math and College Algebra.</p></div>
+            <div class="program-row"><h3>Professional Learning</h3><p>Interactive sessions on data-informed instruction, effective PLCs, formative assessment, and instructional leadership.</p></div>
+            <div class="program-row"><h3>Assessment Leadership</h3><p>Practical systems for testing coordination, secure administration, accommodations, and turning results into action.</p></div>
+          </div>
+          <div class="program-note">“If professional development ends when the presentation ends, professional learning never really began.”</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="proposal-download" id="proposal">
+      <div class="wrap proposal-download-inner">
+        <div>
+          <p class="eyebrow">Want the full picture?</p>
+          <h2>Download the proposal.</h2>
+          <p>Review the complete scope of programs and consulting services.</p>
+        </div>
+        <a class="button" href="The%20Eatmon%20Edge%20Proposal.docx" download="The Eatmon Edge Proposal.docx">Download the proposal <span class="arrow" aria-hidden="true">&#8595;</span></a>
+      </div>
+    </section>
+
+    <section class="founder" id="about">
+      <div class="wrap founder-grid">
+        <div class="founder-visual reveal">
+          <img src="Image%20(60).jpg" alt="Dr. Julon K. Eatmon, Founder and CEO of The Eatmon Edge">
+          <div class="experience-overlay"><strong>20+</strong><span>years of experience in education</span></div>
+        </div>
+        <div class="founder-copy reveal">
+          <p class="eyebrow">Experience rooted in education</p>
+          <h2 class="section-title">Meet the educator behind the edge.</h2>
+          <p>Dr. Julon K. Eatmon is an educator and instructional leader with more than two decades of experience in mathematics instruction, curriculum, assessment, and school improvement.</p>
+          <p>Her work centers on helping educators make sense of student data and decide what to do next. At Huffman High School, her collaborative work supported a six-point increase in the school's state report-card score over two years.</p>
+          <blockquote>“Data doesn't improve schools. What educators do because of the data improves schools.”</blockquote>
+          <div class="founder-signoff">Equip educators. Empower students. Strengthen schools.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing" id="contact">
+      <div class="wrap closing-inner">
+        <h2>Where preparation becomes impact.<br>Let's make the next step count.</h2>
+        <a class="button" href="#work">Find the right support <span class="arrow" aria-hidden="true">&#8594;</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div class="footer-brand">The Eatmon Edge</div>
+      <p>Preparing today. Leading tomorrow.</p>
+      <div class="footer-contact">
+        <span>Julon K. Eatmon</span>
+        <a href="tel:+12057399688">205-739-9688</a>
+        <a href="mailto:Juloneatmon@gmail.com">Juloneatmon@gmail.com</a>
+      </div>
+      <a href="#top">Back to top <span aria-hidden="true">&#8593;</span></a>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector('.menu-toggle');
+    const navigation = document.querySelector('.nav-links');
+
+    menuButton.addEventListener('click', () => {
+      const isOpen = navigation.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(isOpen));
+      menuButton.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+    });
+
+    navigation.addEventListener('click', (event) => {
+      if (event.target.closest('a')) {
+        navigation.classList.remove('open');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.setAttribute('aria-label', 'Open navigation');
+      }
+    });
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe(element));
+  </script>
+</body>
+</html>

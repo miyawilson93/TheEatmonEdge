@@ -371,6 +371,15 @@
   </footer>
 
   <script>
+    const pageNavigation = performance.getEntriesByType('navigation')[0];
+
+    if (pageNavigation?.type === 'navigate') {
+      if (window.location.hash) {
+        history.replaceState(null, '', window.location.pathname + window.location.search);
+      }
+      window.scrollTo(0, 0);
+    }
+
     const menuButton = document.querySelector('.menu-toggle');
     const navigation = document.querySelector('.nav-links');
 
